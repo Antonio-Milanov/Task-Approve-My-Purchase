@@ -22,3 +22,5 @@ This table contains all manager limits in each category (amounts are INCLUSIVE);
 Take notice of JavaDoc information above classes names that have instructions on what 
 you should not change in order for application to work and TODO markings where you need to implement new code. 
 Also, think about how you can make code more optimized and more readable.
+
+Application is created using Java 17.
