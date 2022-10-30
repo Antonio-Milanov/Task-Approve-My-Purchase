@@ -2,19 +2,62 @@ package handlers;
 
 import common.Type;
 
-
 /**
  * //TODO - Implement approval implementation for VicePresident level
  */
-public class VicePresident extends Approver{
+
+public class VicePresident extends Approver {
+
     @Override
     public void approve(int id, double cost, Type type) {
+
+        if (canApprove(id, cost, type)) {
+            //I used printf (not println), because I want to format the code to the second character after the comma:
+            System.out.printf("VicePresident approved purchase with id %d that costs %.2f%n", id, cost);
+            return;
+        }
+
+        System.out.println("Purchase with id " + id + " needs approval from higher position than VicePresident.");
 
         next.approve(id, cost, type);
     }
 
     @Override
     protected boolean canApprove(int id, double cost, Type type) {
-        return false;
+        boolean result = false;
+
+        switch (type) {
+            case CONSUMABLES:
+                if (cost <= 700) {
+                    result = true;
+                } else {
+                    break;
+                }
+            case CLERICAL:
+                if (cost <= 1500) {
+                    result = true;
+                } else {
+                    break;
+                }
+            case GADGETS:
+                if (cost <= 2000) {
+                    result = true;
+                } else {
+                    break;
+                }
+            case GAMING:
+                if (cost <= 4500) {
+                    result = true;
+                } else {
+                    break;
+                }
+            case PC:
+                if (cost <= 6500) {
+                    result = true;
+                } else {
+                    break;
+                }
+        }
+        return result;
     }
 }

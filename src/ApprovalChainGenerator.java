@@ -4,7 +4,8 @@ import handlers.*;
  * Used to generate chain of approval.
  * DO NOT MODIFY.
  */
-public class ApprovalChainGenerator {
+
+public class ApprovalChainGenerator {  // here is the generator
 
     public static Approver generate(Approver manager) {
         Approver director = new Director();

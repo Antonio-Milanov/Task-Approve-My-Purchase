@@ -2,6 +2,7 @@
  * Application starter.
  * DO NOT MODIFY.
  */
+
 public class Main {
     public static void main(String[] args) {
         Executor e = new Executor();
@@ -12,5 +13,6 @@ public class Main {
         public void execute() {
             PurchaseApprovalExecutor.execute();
         }
+        
     }
 }
